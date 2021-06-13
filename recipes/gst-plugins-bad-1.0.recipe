@@ -42,6 +42,7 @@ class Recipe(custom.GStreamer):
                      'webrtc': 'enabled',
                      'webrtcdsp': 'enabled',
                      'zbar': 'enabled',
+		     'rtponvif': 'enabled',
                      # disabled plugins
                      'curl': 'disabled',
                      'curl-ssh2': 'disabled',
@@ -318,6 +319,7 @@ class Recipe(custom.GStreamer):
              'lib/gstreamer-1.0/libgstsrtp%(mext)s',
              'lib/gstreamer-1.0/libgstsrt%(mext)s',
              'lib/gstreamer-1.0/libgstwebrtc%(mext)s',
+             'lib/gstreamer-1.0/libgstrtponvif%(mext)s',
     ]
 
     files_plugins_net_devel = [
@@ -331,6 +333,7 @@ class Recipe(custom.GStreamer):
              'lib/gstreamer-1.0/libgstsrtp.a', 'lib/gstreamer-1.0/libgstsrtp.la',
              'lib/gstreamer-1.0/libgstsrt.a', 'lib/gstreamer-1.0/libgstsrt.la',
              'lib/gstreamer-1.0/libgstwebrtc.a', 'lib/gstreamer-1.0/libgstwebrtc.la',
+             'lib/gstreamer-1.0/libgstrtponvif.a', 'lib/gstreamer-1.0/libgstrtponvif.la',
     ]
 
     files_plugins_net_restricted = [
