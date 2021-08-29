@@ -2,10 +2,11 @@
 
 class Recipe(custom.GStreamer):
     name = 'gst-plugins-good-1.0'
+    stype = SourceType.GIT
     btype = BuildType.MESON
     #tarball_checksum = '2f9abf38cfb9ce4eaea80f53112f826e1d3d6d53dbe618381d55e5a139fc7a94'
     remotes = {'origin': 'https://github.com/cemtrexvideo/gst-plugins-good.git'}
-    commit = 'origin/master'
+    commit = 'origin/cemtrex_changes'
     meson_options = {# enabled plugins
                      'cairo': 'enabled',
                      'dv': 'enabled',

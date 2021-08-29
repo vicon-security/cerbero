@@ -1,0 +1,64 @@
+From d2ab04c206fd8cbcadd67f0f5efa9bae59a7b41b Mon Sep 17 00:00:00 2001
+From: rajneeshksoni <soni.rajneesh@gmail.com>
+Date: Sun, 29 Aug 2021 12:27:32 +0530
+Subject: [PATCH]  fixed python 3.9 issue
+
+---
+ giscanner/girparser.py | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/giscanner/girparser.py b/giscanner/girparser.py
+index 909e08d9..5a4595ac 100644
+--- a/giscanner/girparser.py
++++ b/giscanner/girparser.py
+@@ -79,17 +79,17 @@ class GIRParser(object):
+ 
+     def _find_first_child(self, node, name_or_names):
+         if isinstance(name_or_names, str):
+-            for child in node.getchildren():
++            for child in node:
+                 if child.tag == name_or_names:
+                     return child
+         else:
+-            for child in node.getchildren():
++            for child in node:
+                 if child.tag in name_or_names:
+                     return child
+         return None
+ 
+     def _find_children(self, node, name):
+-        return [child for child in node.getchildren() if child.tag == name]
++        return [child for child in node if child.tag == name]
+ 
+     def _get_current_file(self):
+         if not self._filename_stack:
+@@ -107,7 +107,7 @@ class GIRParser(object):
+             raise SystemExit("%s: Incompatible version %s (supported: %s)" %
+                              (self._get_current_file(), version, COMPATIBLE_GIR_VERSION))
+ 
+-        for node in root.getchildren():
++        for node in root:
+             if node.tag == _corens('include'):
+                 self._parse_include(node)
+             elif node.tag == _corens('package'):
+@@ -148,7 +148,7 @@ class GIRParser(object):
+             parser_methods[_corens('constant')] = self._parse_constant
+             parser_methods[_corens('function')] = self._parse_function
+ 
+-        for node in ns.getchildren():
++        for node in ns:
+             method = parser_methods.get(node.tag)
+             if method is not None:
+                 method(node)
+@@ -382,7 +382,7 @@ class GIRParser(object):
+     def _parse_fields(self, node, obj):
+         res = []
+         names = (_corens('field'), _corens('record'), _corens('union'), _corens('callback'))
+-        for child in node.getchildren():
++        for child in node:
+             if child.tag in names:
+                 fieldobj = self._parse_field(child, obj)
+                 res.append(fieldobj)
+-- 
+2.24.3 (Apple Git-128)
+
