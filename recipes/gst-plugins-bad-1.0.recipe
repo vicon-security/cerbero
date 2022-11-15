@@ -48,7 +48,7 @@ class Recipe(custom.GStreamer):
                      'webrtc': 'enabled',
                      'webrtcdsp': 'enabled',
                      'zbar': 'enabled',
-		     'rtponvif': 'enabled',
+		     'onvif': 'enabled',
                      # disabled plugins
                      'amfcodec': 'disabled',
                      'curl': 'disabled',
