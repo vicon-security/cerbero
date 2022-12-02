@@ -4,7 +4,7 @@ import shutil
 class Recipe(custom.GStreamer):
     name = 'gstreamer-1.0'
     btype = BuildType.MESON
-    tarball_checksum = '67c1edf8c3c339cda5dde85f4f7b953bb9607c2d13ae970e2491c5c4c055ef5f'
+    #tarball_checksum = '67c1edf8c3c339cda5dde85f4f7b953bb9607c2d13ae970e2491c5c4c055ef5f'
     stype = SourceType.GIT
     remotes = {'origin': 'https://github.com/vicon-security/gstreamer.git'}
     commit = 'origin/cemtrex-1.20'
