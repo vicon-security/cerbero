@@ -79,6 +79,7 @@ class Recipe(custom.GStreamer):
                      'wic': 'disabled',
                      'win32ipc': 'disabled',
                      'wildmidi': 'disabled',
+                     'vicondewarp': 'disabled',
                     }
     deps = ['gstreamer-1.0', 'gst-plugins-base-1.0', 'bzip2', 'libass',
             'libkate', 'zlib', 'openh264', 'opus', 'librtmp', 'libxml2',
@@ -516,6 +517,7 @@ class Recipe(custom.GStreamer):
             self.meson_options['directsound'] = 'enabled'
             self.meson_options['winks'] = 'enabled'
             self.meson_options['winscreencap'] = 'enabled'
+            self.enable_plugin('vicondewarp', 'sys', 'visualstudio')
             if self.using_msvc():
                 # plugin is C++, library is Autotools
                 self.disable_plugin('soundtouch', 'effects', dep='soundtouch')
