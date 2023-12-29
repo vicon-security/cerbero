@@ -7,7 +7,7 @@ class Recipe(custom.GStreamer):
 #   tarball_checksum = '67c1edf8c3c339cda5dde85f4f7b953bb9607c2d13ae970e2491c5c4c055ef5f'
     stype = SourceType.GIT
     remotes = {'origin': 'https://github.com/vicon-security/gstreamer.git'}
-    commit = 'origin/F2'
+    commit = 'origin/vicon_main_1.22'
     deps = ['glib']
     bash_completions = ['gst-inspect-1.0', 'gst-launch-1.0']
 
